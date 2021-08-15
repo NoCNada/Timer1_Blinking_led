@@ -16,14 +16,14 @@ void initTimers();
 //
 
 //. Variables globales
-volatile uint16_t timeOut10ms;
+volatile uint16_t timeOut1ms;
 //
 
 //. Interrupciones
 ISR(TIMER1_COMPA_vect){
-	timeOut10ms--;
-	if (!timeOut10ms){
-		timeOut10ms = 1000;
+	timeOut1ms--;
+	if (!timeOut1ms){
+		timeOut1ms = 1000;
 		//(1 << PORTB5 1) desplazado por B5 es igual a 00100000
 		if(PORTB & (1 << PORTB5)) //desplazo al numero 1 cinco veces para que aparezca en la posicion 5
 			PORTB &= ~(1 << PORTB5); //~ (1 << PORTB5) = 11011111 hago cero el bit 5 de PORTB5
@@ -58,7 +58,7 @@ void initTimers(){
 int main(void)
 {
     /* Replace with your application code */
-	timeOut10ms = 1000;
+	timeOut1ms = 1000;
 	initPort();
 	initTimers();
 	sei(); // pongo en 1 el bit 7 del Status

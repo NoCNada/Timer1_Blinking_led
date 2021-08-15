@@ -8,7 +8,7 @@ d:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/..
 Allocating common symbols
 Common symbol       size              file
 
-timeOut10ms         0x2               main.o
+timeOut1ms          0x2               main.o
 
 Discarded input sections
 
@@ -316,7 +316,7 @@ END GROUP
  *(.bss*)
  *(COMMON)
  COMMON         0x00800100        0x2 main.o
-                0x00800100                timeOut10ms
+                0x00800100                timeOut1ms
                 0x00800102                PROVIDE (__bss_end, .)
                 0x0000013e                __data_load_start = LOADADDR (.data)
                 0x0000013e                __data_load_end = (__data_load_start + SIZEOF (.data))
@@ -417,11 +417,11 @@ END GROUP
  *(.debug_frame)
  .debug_frame   0x00000000       0x68 main.o
 
-.debug_str      0x00000000      0x391
+.debug_str      0x00000000      0x390
  *(.debug_str)
  .debug_str     0x00000000      0x208 D:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x189 main.o
-                                0x1bd (size before relaxing)
+ .debug_str     0x00000208      0x188 main.o
+                                0x1bc (size before relaxing)
 
 .debug_loc      0x00000000       0x49
  *(.debug_loc)
